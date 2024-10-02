@@ -24,3 +24,7 @@ NextGame is a beautiful video game discovery web application that allows users t
 ## Purpose
 
 The primary goal of this project is to reinforce and expand my knowledge of React and TypeScript, especially TypeScript, which is relatively new to me. This project also showcases my skills as a Full-Stack Developer, integrating both front-end and back-end technologies.
+
+## API Integration
+
+NextGame fetches data from an external API to provide up-to-date information about games. Ensure that the API key is correctly configured in your environment variables for the app to work correctly.
