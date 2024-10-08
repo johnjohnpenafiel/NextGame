@@ -61,5 +61,25 @@ def get_games():
     except requests.exceptions.RequestException as e:
         return jsonify({"error": str(e)}), 500
 
+
+@app.route('/api/genres', methods=["GET"])
+def get_genres():
+    external_api_url = 'https://api.rawg.io/api/genres'
+
+    api_key =  os.getenv("API_KEY")
+    if not api_key:
+        return jsonify({"error": "api key not found"}), 500
+
+    params = request.args.to_dict()
+    params['key'] = api_key
+
+    try:
+        response = requests.get(external_api_url, params=params)
+        response.raise_for_status()
+        data = response.json()
+        return jsonify(data)
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == "__main__":
     app.run(port=5555, debug=True)
