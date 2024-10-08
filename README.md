@@ -28,7 +28,3 @@ The primary goal of this project is to reinforce and expand my knowledge of Reac
 ## API Integration
 
 NextGame fetches data from an external API to provide up-to-date information about games. Ensure that the API key is correctly configured in your environment variables for the app to work correctly.
-
-## Purpose
-
-**JackSpot** was created as the final project of my Flatiron School program, designed to showcase the technical skills and knowledge I gained throughout my journey. The project integrates full-stack development techniques, combining a modern frontend with React and Next.js, and a robust backend with Python, Flask, and SQLAlchemy. JackSpot aims to provide a social, user-friendly platform for discovering and sharing favorite locations, demonstrating the practical application of all the core technologies and concepts learned during my time at Flatiron.
