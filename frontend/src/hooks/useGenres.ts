@@ -13,7 +13,7 @@ interface FetchGenresRequest {
 }
 
 const useGenres = () => {
-  const [games, setGames] = useState<Genres[]>([]);
+  const [genres, setGenres] = useState<Genres[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,7 +23,7 @@ const useGenres = () => {
     apiClient
       .get<FetchGenresRequest>("/genres", { signal: controller.signal })
       .then((res) => {
-        setGames(res.data.results);
+        setGenres(res.data.results);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -35,7 +35,7 @@ const useGenres = () => {
     return () => controller.abort();
   }, []);
 
-  return { games, error, isLoading };
+  return { genres, error, isLoading };
 };
 
 export default useGenres;
