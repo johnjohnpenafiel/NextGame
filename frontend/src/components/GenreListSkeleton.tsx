@@ -9,7 +9,7 @@ import {
 
 const GenreListSkeleton = () => {
   return (
-    <ListItem paddingY="10px">
+    <ListItem paddingY="5px">
       <HStack>
         <SkeletonCircle />
         <SkeletonText
