@@ -1,4 +1,4 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { Box, HStack, Image, Text } from "@chakra-ui/react";
 import logo from "../assets/DALL·E Logo 2024-09-26.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
@@ -6,9 +6,14 @@ import SearchInput from "./SearchInput";
 const NavBar = () => {
   return (
     <HStack padding="10px">
-      <div style={{ padding: "5px" }}>
-        <Image src={logo} boxSize="60px" borderRadius="10px" />
-      </div>
+      <Box minWidth="60px">
+        <Image
+          src={logo}
+          boxSize="60px"
+          borderRadius="10px"
+          objectFit="contain"
+        />
+      </Box>
       <SearchInput />
       <ColorModeSwitch />
     </HStack>
