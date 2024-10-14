@@ -3,7 +3,11 @@ import logo from "../assets/DALL·E Logo 2024-09-26.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack padding="10px">
       <Box minWidth="60px">
@@ -14,7 +18,7 @@ const NavBar = () => {
           objectFit="contain"
         />
       </Box>
-      <SearchInput />
+      <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
   );

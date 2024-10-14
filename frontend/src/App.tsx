@@ -12,21 +12,22 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 function App() {
-  const [gameQuery, setGamePlatform] = useState<GameQuery>({} as GameQuery);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   const onSelectGenre = (genre: Genre) => {
-    setGamePlatform({ ...gameQuery, genre });
+    setGameQuery({ ...gameQuery, genre });
   };
 
   const onSelectedPlatform = (platform: Platform) => {
-    setGamePlatform({ ...gameQuery, platform });
+    setGameQuery({ ...gameQuery, platform });
   };
 
   const onSelectSortOrder = (sortOrder: string) => {
-    setGamePlatform({ ...gameQuery, sortOrder });
+    setGameQuery({ ...gameQuery, sortOrder });
   };
 
   return (
@@ -42,7 +43,11 @@ function App() {
         }}
       >
         <GridItem area="nav">
-          <NavBar />
+          <NavBar
+            onSearch={(searchText) =>
+              setGameQuery({ ...gameQuery, searchText })
+            }
+          />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
