@@ -1,5 +1,5 @@
-import { Box, HStack, Image, Text } from "@chakra-ui/react";
-import logo from "../assets/DALL·E Logo 2024-09-26.webp";
+import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import logo from "../assets/NextgameLogo.svg";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
@@ -13,13 +13,20 @@ const NavBar = ({ onSearch }: Props) => {
       <Box minWidth="60px">
         <Image
           src={logo}
-          boxSize="60px"
-          borderRadius="10px"
+          boxSize="40px"
+          borderRadius="8px"
           objectFit="contain"
+          m="10px"
         />
       </Box>
+      <Heading as="h6" size="md" mr="10px">
+        NEXTGAME
+      </Heading>
+
       <SearchInput onSearch={onSearch} />
-      <ColorModeSwitch />
+      <Box m="10px">
+        <ColorModeSwitch />
+      </Box>
     </HStack>
   );
 };
